@@ -1,0 +1,89 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink:       #ff3ea5;
+  --pink-blob:  rgba(255, 62, 165, 0.18);
+  --green-hl:   #c9e8c9;
+  --yellow:     #e8c547;
+  --coral:      #ff6b6b;
+  --mint:       #cfe8da;
+  --purple:     #7c3aed;
+  --black:      #111111;
+  --gray:       #555555;
+  --gray-light: #888888;
+  --border:     #e0e0e0;
+  --white:      #ffffff;
+  --red-tri:    #ff4040;
+  --color-red-tri: #ff6b6b;
+
+  --font-display: 'Archivo Black', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --max-w: 1100px;
+  --px: 40px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
+
+/* ─── Reveal on scroll ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── Keyframes ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+
+
+/* circular imag */
+.circ-img {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  transition: transform 0.4s ease;
+}
+
+
+/* ─── Read more link ─── */
+.read-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  cursor: pointer;
+  transition: gap .3s;
+}
+.read-link:hover { gap: 18px; }
+.read-link .rl {
+  display: block;
+  width: 68px;
+  height: 1.5px;
+  background: var(--black);
+  transition: width .3s;
+  flex-shrink: 0;
+}
+.read-link:hover .rl { width: 90px; }
+
+@media (max-width: 600px) { :root { --px: 20px; } }

@@ -1,0 +1,9 @@
+.footer { background:var(--mint); overflow:hidden; }
+.divWrap { max-width:var(--max-w); margin:0 auto; padding:0 var(--px); position:relative; }
+.hr { height:1.5px; background:rgba(0,0,0,.12); border:none; }
+.hand { position:absolute; right:calc(var(--px) + 8px); top:-13px; font-size:20px; background:var(--mint); padding:0 5px; }
+.grid { max-width:var(--max-w); margin:0 auto; padding:40px var(--px) 18px; display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
+.bottom { text-align:center; padding:14px var(--px) 36px; }
+.bottom span { font-size:13px; color:var(--gray-light); }
+@media(max-width:900px) { .grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:420px) { .grid{grid-template-columns:1fr;} }

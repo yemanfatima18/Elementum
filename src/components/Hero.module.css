@@ -1,0 +1,132 @@
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 60px var(--px) 20px;
+  position: relative;
+  overflow: visible;
+}
+
+/* ── Swirl (left side) ── */
+.swirl {
+  position: absolute;
+  left: -20px;
+  top: 180px;
+  opacity: .85;
+  pointer-events: none;
+}
+
+/* ── Heading block ── */
+.headingWrap {
+  text-align: center;
+  padding: 0 20px;
+  animation: fadeInUp .8s ease .05s both;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6vw, 72px);
+  line-height: 1.18;
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.line {
+  display: block;
+  white-space: nowrap;
+}
+
+/* "thinkers" — yellow underline */
+.thinkers {
+  position: relative;
+  display: inline-block;
+}
+.thinkers::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 5px;
+  background: var(--yellow);
+  border-radius: 3px;
+}
+
+/* "changing" — pink highlight blob behind text */
+.changingWrap {
+  position: relative;
+  display: inline-block;
+}
+.changingBlob {
+  position: absolute;
+  inset: -6px -14px;
+  background: #ffb3d9;       /* soft pink highlight */
+  border-radius: 50px;
+  z-index: 0;
+}
+.changingText {
+  position: relative;
+  z-index: 1;
+}
+
+/* "status" — green pill */
+.statusPill {
+  background: var(--green-hl);
+  border-radius: 8px;
+  padding: 2px 12px;
+  display: inline-block;
+}
+
+/* ── Sub text ── */
+.sub {
+  text-align: center;
+  color: var(--gray);
+  font-size: 14.5px;
+  line-height: 1.7;
+  margin-top: 22px;
+  animation: fadeInUp .7s ease .25s both;
+}
+
+/* ── Avatar row ── */
+.avatarRow {
+  margin:  auto 90px;
+  position: relative;
+  height: 260px;
+  margin-top: 28px;
+}
+
+.avatar {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--white);
+  box-shadow: 0 4px 20px rgba(0,0,0,.13);
+  /* float + fade-in */
+  animation: floatUp 4s ease-in-out infinite, fadeInUp .55s ease both;
+  transition: transform .3s, box-shadow .3s;
+  cursor: pointer;
+}
+.avatar:hover {
+  transform: scale(1.09) !important;
+  z-index: 10;
+  box-shadow: 0 8px 30px rgba(0,0,0,.2);
+  animation-play-state: paused;
+}
+.avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .avatar:nth-child(n+7) { display: none; }
+  .avatarRow { height: 220px; }
+  .swirl { display: none; }
+}
+@media (max-width: 640px) {
+  .heading   { font-size: 30px; }
+  .sub br    { display: none; }
+  .avatar:nth-child(n+5) { display: none; }
+  .avatarRow { height: 190px; }
+  .line      { white-space: normal; text-align: center; }
+}

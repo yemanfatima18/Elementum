@@ -1,0 +1,7 @@
+.col { display:flex; flex-direction:column; }
+.title { font-size:15px; font-weight:600; margin-bottom:16px; }
+.links { display:flex; flex-direction:column; gap:11px; }
+.link { font-size:14px; color:var(--gray); transition:color .2s; }
+.link:hover { color:var(--black); }
+.contact { font-style:normal; display:flex; flex-direction:column; gap:10px; }
+.contact p { font-size:14px; color:var(--gray); line-height:1.65; }

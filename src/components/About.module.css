@@ -1,0 +1,232 @@
+.about {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 36px var(--section-px) 80px;
+}
+
+/* ── Pink border wrapper ── */
+.pinkBorder {
+  border: 2.5px solid var(--color-pink);
+  border-radius: 12px;
+  margin: auto 50px;
+  padding: 24px;
+  position: relative; 
+  
+  background: linear-gradient(140deg, #fff6fa 0%, #fff 55%);
+  position: relative;
+}
+
+/* ── Ga badge ── */
+.gaBadge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--color-pink);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 18px;
+  letter-spacing: 0.05em;
+}
+
+/* ── Two-column grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  padding: 46px 46px 62px;
+  min-height: 530px;
+}
+
+
+
+
+/* ─────────────── LEFT ─────────────── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.leftHeading {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.8vw, 38px);
+  line-height: 1.22;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-gray);
+  max-width: 360px;
+}
+
+/* Circle image + triangle */
+.imageWrap {
+  position: relative;
+  width: 192px;
+  height: 192px;
+  margin-top: auto;
+}
+
+.triBottomLeft {
+  position: absolute;
+  top: -17px;
+  left: -9px;
+  width: 70px;
+  height: 65px;
+  background: var(--color-red-tri);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: -1;
+}
+
+/* .triBottomLeft {
+  position: absolute;
+  top: -17px;
+  left: -15px;
+  width: 15px;
+  height: 15px;
+  border-left:   19px solid transparent;
+  border-right:  19px solid transparent;
+  border-bottom: 33px solid var(--color-red-tri);
+  z-index: -1;
+} */
+
+.circleImg {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─────────────── RIGHT ─────────────── */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+
+/* 
+
+
+
+
+
+*/
+.triangle {
+  width: 70px;
+  height: 60px;
+  background: #ff6b6b;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+}
+
+
+
+
+
+/* 
+
+
+
+
+
+*/
+.topImageWrap {
+  position: relative;
+  /* width: 218px; */
+  height: 218px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* .triTopRight {
+  position: absolute;
+  top: 8px;
+  right: -13px;
+  width: 40px;
+  height: 35px;
+  background: var(--color-red-tri);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 3;
+} */
+
+.triTopRight {
+  position: absolute;
+  top: 15px;
+  right: -28px;
+  width: 60px;
+  height: 60px;
+  background: var(--color-red-tri);
+  transform: rotate(25deg);
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  z-index: -1;
+}
+
+.circleImgTop {
+  top-margin: 50px;
+  width: 225px;
+  height: 225px;
+}
+
+.rightText {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rightHeading {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.4vw, 32px);
+  line-height: 1.25;
+}
+
+/* ── Wavy bottom line ── */
+/* .waveLine {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  transform: rotate(150deg);
+  opacity: 0.55;
+} */
+
+
+.waveLine {
+  position: absolute;
+  top: 120px;
+  margin-left: 90px;
+  width: 80%;
+  height: 300px;
+  pointer-events: none;
+  z-index: -1;
+  transform: rotate(350deg);
+  opacity: 0.8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 24px 22px 46px;
+    gap: 26px;
+    min-height: unset;
+  }
+  .squareDeco { display: none; }
+  .topImageWrap { margin-left: 0; }
+}
+
+@media (max-width: 600px) {
+  .about       { padding-bottom: 60px; }
+  .imageWrap,
+  .circleImg,
+  .topImageWrap,
+  .circleImgTop { width: 160px; height: 160px; }
+}

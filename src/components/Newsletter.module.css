@@ -1,0 +1,9 @@
+.wrap { max-width:var(--max-w); margin:0 auto; padding:68px var(--px) 56px; text-align:center; position:relative; }
+.arrows { position:absolute; top:28px; left:50%; transform:translateX(-130px); pointer-events:none; }
+.moon { position:absolute; right:46px; top:46px; width:88px; height:110px; background:var(--purple); border-radius:0 0 50% 50%; transform:rotate(-12deg); }
+.h { font-family:var(--font-display); font-size:clamp(30px,5.5vw,64px); line-height:1.18; margin-bottom:12px; }
+.sub { font-size:14px; color:var(--gray); margin-bottom:26px; }
+.btn { background:var(--black); color:var(--white); font-size:15px; font-weight:600; padding:14px 42px; border-radius:100px; border:none; cursor:pointer; transition:transform .2s,background .2s; }
+.btn:hover { transform:translateY(-2px); background:#222; }
+.success { font-size:16px; font-weight:600; color:#1a5c3e; padding:14px 0; }
+@media(max-width:600px) { .wrap{padding:46px var(--px) 40px;} .arrows,.moon{display:none;} }
